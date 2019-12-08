@@ -10,5 +10,5 @@ export const setToken = token => {
 };
 
 export const clearUserToken = () => {
-  localStorage.removeItem(TOKEN);
+  localStorage.clear();
 };
