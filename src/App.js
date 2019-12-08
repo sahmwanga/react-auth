@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import Login from "./components/Login";
 import PrivateRoute from "./components/HOC/PrivateRoute";
@@ -13,6 +13,7 @@ function App() {
         <Switch>
           <PrivateRoute exact path="/" component={HomePage} />
           <Route path="/login" component={Login} />
+          <Redirect to="/" />
         </Switch>
       </BrowserRouter>
     </div>
