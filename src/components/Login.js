@@ -1,5 +1,7 @@
-import React, { Component } from "react";
-import { setToken } from "../utils";
+import React from "react";
+import { setToken, getToken } from "../utils";
+
+import Button from "@material-ui/core/Button";
 
 const Login = props => {
   const handleSubmit = () => {
@@ -11,9 +13,15 @@ const Login = props => {
     props.history.push("/");
   };
 
+  if (getToken()) {
+    props.history.push("/");
+  }
+
   return (
     <div>
-      <button onClick={() => handleSubmit()}>Login</button>
+      <Button variant="outlined" color="primary" onClick={() => handleSubmit()}>
+        Login
+      </Button>
     </div>
   );
 };

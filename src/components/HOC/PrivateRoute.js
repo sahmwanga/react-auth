@@ -5,13 +5,11 @@ import { getToken } from "../../utils";
 
 function PrivateRoute({ component: Component, ...rest }) {
   const token = getToken();
-  console.log(token)
-
   return (
     <Route
       {...rest}
       render={props =>
-        getToken() != null ? (
+        token!= null ? (
           <Component {...props} />
         ) : (
           <Redirect

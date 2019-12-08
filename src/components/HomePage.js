@@ -1,7 +1,12 @@
 import React, { Component } from "react";
+import Header from "./Header";
 
 export default class HomePage extends Component {
   render() {
-    return <div>Authenticated User</div>;
+    return (
+      <div>
+        <Header history={this.props} />
+      </div>
+    );
   }
 }
